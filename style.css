@@ -1,0 +1,252 @@
+/*body
+{
+  background: #03080a;
+  color: #45f3ff;
+}
+input[type=text], select {
+    width: 100%;
+    padding: .5rem;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: .5rem;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  form h1
+  {
+    margin-left: 50%;
+    transform: translateX(-15%);
+  }
+  table
+  {
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 50%;
+  }*/
+
+  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Indie+Flower&display=swap');
+*
+{
+    font-family: 'Chakra Petch', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #03080a;
+}
+form
+{
+    width: 500px;
+    padding: 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+form h2
+{
+    width: 100%;
+    color: #45f3ff;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+form .row100
+{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+form .row100 .col
+{
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 10px;
+    transition: .5s;
+}
+form .row100 .inputBox
+{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: #45f3ff;
+}
+form .row100 .inputBox input,
+form .row100 .inputBox.textarea textarea
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #000;
+}
+form .row100 .inputBox .text
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: .5s;
+    pointer-events: none;
+}
+form .row100 .inputBox input:focus + .text,
+form .row100 .inputBox input:valid + .text
+{
+    top: -35px;
+    left: -10px;
+}
+form .row100 .inputBox .line
+{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    transition: .5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+form .row100 .inputBox input:focus ~ .line,
+form .row100 .inputBox input:valid ~ .line
+{
+    height: 100%;
+}
+form .row100 .inputBox .textarea
+{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+}
+form .row100 .inputBox.textarea textarea
+{
+    height: 100%;
+    resize: none;
+}
+form .row100 .inputBox textarea:focus + .text,
+form .row100 .inputBox textarea:valid + .text
+{
+    top: -35px;
+    left: -10px;
+}
+form .row100 .inputBox textarea:focus ~ .line,
+form .row100 .inputBox textarea:valid ~ .line
+{
+    height: 100%;
+}
+.submit
+{
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: #45f3ff;
+    color: #000;
+    font-size: 18px;
+    border-radius: 2px;
+}
+.buttons
+{
+  position: absolute;
+  top: 90%;
+  width: 45%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.buttons a
+{
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #45f3ff;
+  text-decoration: none;
+  color: black;
+  transition: .3s linear;
+  margin: 10px;
+}
+body a:hover
+{
+  background-color: transparent;
+  color: #45f3ff;
+  border: 1px solid #45f3ff;
+}
+#submit
+{
+  border-radius: 10px;
+  transition: .3s linear;
+}
+#submit:hover
+{
+  background-color: transparent;
+  color: #45f3ff;
+  border: 1px solid #45f3ff;
+}
+table
+{
+  color: #45f3ff;
+  position: absolute;
+  top: 110%;
+  width: 500px;
+}
+table th, table td
+{
+  border: 1px solid #45f3ff;
+  padding: 10px;
+  width: 25%;
+}
+form .row100 .inputBox select
+{
+  width: 100%;
+  background: transparent;
+  border: 1px solid #45f3ff;
+  height: 50px;
+  color: #45f3ff;
+  font-size: 25px;
+  letter-spacing: 5px;
+}

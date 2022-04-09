@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form method="post" autocomplete="off" name="google-sheet">
+    <h2>Register to our courses!</h2>
+    <div class="row100">
+        <div class="col">
+            <div class="inputBox">
+                <input type="text" name="Name" required="required" id="some_message1">
+                <span class="text">Full Name</span>
+                <span class="line"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row100">
+        <div class="col">
+            <div class="inputBox">
+                <input type="email" name="Email" required="required" id="some_message2">
+                <span class="text">Email</span>
+                <span class="line"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="inputBox">
+                <input type="phone" name="Phone" required="required" id="some_message3">
+                <span class="text">Mobile</span>
+                <span class="line"></span>
+            </div>
+        </div>
+        <input type="file">
+        <div class="col">
+            <div class="inputBox">
+                <select name="" id="course">
+                    <option value="Web">Web</option>
+                    <option value="Android">Android</option>
+                    <option value="Robototechnics">Robototechnics</option>
+                    <option value="Robokids">Robokids</option>
+                </select>
+            </div>
+        </div>
+            <div class="row100">
+                <div class="col">
+                    <input type="submit" class="submit" value="Submit" name="submit" id="submit">
+                    </div>
+                </div></div>
+    </form>
+    <div class="buttons">
+        <a href="https://docs.google.com/spreadsheets/d/105e5ZvkPgHE7_OHMkWmajbiQzJlkzORObeDpqZvQtjc/edit#gid=0">Downlaod Registrated Members</a>
+        <a href="./registratedlist.html">Registrated Students' list</a>
+    </div>    
+ <script type="text/javascript">
+	  const scriptURL = 'https://script.google.com/macros/s/AKfycbyGsViegd7S1E4jUPSdy2sBp4dK3j6hjqOZPs3CI8sP35SHWuq496akGP1_KnmAcZk/exec'
+            const form = document.forms['google-sheet']
+            let bot = {
+    TOKEN: "5086809796:AAF1a1TfxGFTxSuInRlGHdzzDBq1S2MAiGI",
+    chatID: "-612226940",
+}
+
+form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Ro`yxatdan o`tdingiz"))
+                .catch(error => console.error('Ro`yxatdan o`tishda xatolik. Qaytadan urunib ko`ring', error.message))
+            })
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    let message1 = document.querySelector("#some_message1").value;
+    let message2 = document.querySelector("#some_message2").value;
+    let message3 = document.querySelector("#some_message3").value;
+    let message = message1 + " | " + message2 + " | " +message3;
+    fetch(`https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=${message}`, {
+        method: "GET"
+    })
+})
+
+      function onAddWebsite(e) {
+        e.preventDefault();
+        const fname = document.getElementById("some_message1").value;
+        const email = document.getElementById("some_message2").value;
+        const mobile = document.getElementById("some_message3").value;
+        const course = document.getElementById("course").value;
+        localStorage.setItem("fname", fname);
+      }
+      formEl.addEventListener("submit", onAddWebsite);
+  </script>
+</body>
+</html>
